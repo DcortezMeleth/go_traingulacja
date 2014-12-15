@@ -51,6 +51,8 @@ class Algorithm(object):
 
     def divide(self):
         v = self.polygon.vertices[0].prev
+        self.polygon.vertices[0].side = structures.Side.RIGHT
+        self.polygon.vertices[-1].side = structures.Side.RIGHT
         while v is not self.polygon.vertices[-1]:
             v.side = structures.Side.RIGHT
             v = v.prev

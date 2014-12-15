@@ -34,8 +34,8 @@ def init_broom(win):
     broom.setFill("green")
     broom.draw(win)
     State.broom = broom
-    alg = algo.Algorithm(State.polygon)
-    alg.run(move_broom)
+    solver = algo.Algorithm(State.polygon)
+    solver.run(move_broom)
     print 'Finish!'
 
 
@@ -68,7 +68,7 @@ def draw_polygon():
 
     State.polygon.make_round()
 
-    algo.classify_vertices(State.polygon)
+    algo.set_vertex_types(State.polygon)
 
     # to nie blad - dzielimy tu wierzchoki na strony
     a = algo.Algorithm(State.polygon)

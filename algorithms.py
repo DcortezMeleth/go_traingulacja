@@ -22,7 +22,7 @@ def vector_angle(v1, v2):
                 (math.sqrt(math.pow(v1.x, 2) + math.pow(v1.y, 2))*math.sqrt(math.pow(v2.x, 2) + math.pow(v2.y, 2))))
 
 
-def classify_vertices(polygon):
+def set_vertex_types(polygon):
     for v in polygon.vertices:
         v1 = v.prev
         v2 = v.next

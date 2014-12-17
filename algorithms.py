@@ -51,8 +51,8 @@ class Algorithm(object):
 
     def divide(self):
         v = self.polygon.vertices[0].prev
-        self.polygon.vertices[0].side = structures.Side.RIGHT
-        self.polygon.vertices[-1].side = structures.Side.RIGHT
+        self.polygon.vertices[0].side = structures.Side.LEFT
+        self.polygon.vertices[-1].side = structures.Side.LEFT
         while v is not self.polygon.vertices[-1]:
             v.side = structures.Side.RIGHT
             v = v.prev
@@ -90,4 +90,6 @@ class Algorithm(object):
                     if len(stack) == 0:
                         break
                     r = stack[0]
+                    ind = sorted([self.vertices.index(p), self.vertices.index(q), self.vertices.index(r)])
+                    first, second, third = self.vertices[ind[0]], self.vertices[ind[1]], self.vertices[ind[2]]
             stack = [p, q] + stack

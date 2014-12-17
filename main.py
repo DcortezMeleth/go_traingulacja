@@ -3,6 +3,7 @@ import sys
 import graphics as gx
 import structures
 import algorithms as algo
+import traceback
 
 
 __author__ = 'Bartosz'
@@ -62,9 +63,9 @@ def draw_point(win, x, y, r, color='black'):
 def draw_polygon():
     points = State.points
     for i in range(len(points)):
-        draw_line(points[i].getX(), points[i].getY(), points[(i + 1) % len(points)].getX(),
-                  points[(i + 1) % len(points)].getY(), State.win, 'black')
-        State.polygon.add_vertex(structures.Vertex(points[i].getX(), points[i].getY()))
+        draw_line(points[i].x, points[i].y, points[(i + 1) % len(points)].x,
+                  points[(i + 1) % len(points)].y, State.win, 'black')
+        State.polygon.add_vertex(structures.Vertex(points[i].x, points[i].y))
 
     State.polygon.make_round()
 
